@@ -219,7 +219,6 @@ dependencies.select(&:top_level?).each do |dep|
     credentials: credentials,
     assignees: assignees,
     author_details: { name: "Dependabot", email: "no-reply@github.com" },
-    label_language: true,
   )
   pull_request = pr_creator.create
   puts " submitted"
