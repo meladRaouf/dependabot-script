@@ -113,7 +113,7 @@ elsif ENV["BITBUCKET_ACCESS_TOKEN"]
     api_endpoint: ENV["BITBUCKET_API_URL"] || "https://api.bitbucket.org/2.0/",
     repo: repo_name,
     directory: directory,
-    branch: nil,
+    branch: branch,
   )
 elsif ENV["BITBUCKET_APP_USERNAME"] && ENV["BITBUCKET_APP_PASSWORD"]
   bitbucket_hostname = ENV["BITBUCKET_HOSTNAME"] || "bitbucket.org"
@@ -219,7 +219,6 @@ dependencies.select(&:top_level?).each do |dep|
     credentials: credentials,
     assignees: assignees,
     author_details: { name: "Dependabot", email: "no-reply@github.com" },
-    labeler: nil,
   )
   pull_request = pr_creator.create
   puts " submitted"
